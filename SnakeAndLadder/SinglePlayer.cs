@@ -12,11 +12,13 @@ namespace SnakeAndLadder
         {
             int startPosition = 0; 
             int position = 0;
+            int diceCount=0;
 
             while (position < 100)
             {
                 Random random = new Random();
                 int dice = random.Next(1, 7);
+                diceCount++;
 
                 Console.WriteLine();
                 Console.WriteLine("Dice has been Rolled: " + dice);
@@ -63,6 +65,7 @@ namespace SnakeAndLadder
             }
             Console.WriteLine();
             Console.WriteLine("Congrats, You win.");
+            Console.WriteLine("The Dice was rolled {0} times.",diceCount);
 
         }
     }
