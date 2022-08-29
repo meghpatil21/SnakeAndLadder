@@ -26,14 +26,25 @@ namespace SnakeAndLadder
                 switch (opt)
                 {
                     case 1:
-                        Console.WriteLine("It's No Play: You don't advance");
+                        Console.WriteLine("It's No Play: You don't advance.");
                         Console.WriteLine("Your Current Position is "+position);
                         break;
                     case 2:
                         Console.WriteLine("Congrats, its Ladder: You advance by " + dice);
-                        position = position + dice;
-                        Console.WriteLine("Your Current Position is " + position);
-                        break;
+                        position = position + dice; //99 + 6= 105
+                        if(position>100)
+                        {
+                            Console.WriteLine("Since its going ahead of 100,You do not advance.");
+                            position = position - dice;
+                            Console.WriteLine("Your Current Position is " + position);
+                            break;
+                        }
+                        else 
+                        {
+                            Console.WriteLine("Your Current Position is " + position);
+                            break;
+                        }
+                        //Console.WriteLine("Your Current Position is " + position);
                     case 3:
                         Console.WriteLine("Opps!,its a Snake: You retreat by " + dice);
                         position = position - dice;
@@ -41,7 +52,7 @@ namespace SnakeAndLadder
                         if (position < 0)
                         {
                             position = startPosition;
-                            Console.WriteLine("You start again from 0");
+                            Console.WriteLine("You start again from 0.");
                             break;
                         }
                         else
@@ -50,7 +61,8 @@ namespace SnakeAndLadder
                         }
                 }
             }
-            Console.WriteLine(position);
+            Console.WriteLine();
+            Console.WriteLine("Congrats, You win.");
 
         }
     }
