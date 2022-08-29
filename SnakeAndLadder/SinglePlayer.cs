@@ -11,32 +11,46 @@ namespace SnakeAndLadder
         public static void SinglePlayerGame()
         {
             int startPosition = 0; 
-            int position = 0;   
-            
-            Random random = new Random();
-            int dice =random.Next(1,7);
+            int position = 0;
 
-            Console.WriteLine();
-            Console.WriteLine("Dice has been Rolled: " +dice);
-            Console.WriteLine("Checking for Options:");
-
-            int opt=random.Next(1,4);
-            switch(opt)
+            while (position < 100)
             {
-                case 1:
-                    Console.WriteLine("It's No Play: You don't advance");
-                    break;
-                case 2:
-                    Console.WriteLine("Congrats, its Ladder: You advance by "+dice);
-                    position = position+dice;
-                    break;
-                case 3:
-                    Console.WriteLine("Opps!,its a Snake: You retreat by " + dice);
-                    position = position-dice;
-                    break;
-            }
+                Random random = new Random();
+                int dice = random.Next(1, 7);
 
-            
+                Console.WriteLine();
+                Console.WriteLine("Dice has been Rolled: " + dice);
+                Console.WriteLine("Checking for Options:");
+
+                int opt = random.Next(1, 4);
+                switch (opt)
+                {
+                    case 1:
+                        Console.WriteLine("It's No Play: You don't advance");
+                        Console.WriteLine("Your Current Position is "+position);
+                        break;
+                    case 2:
+                        Console.WriteLine("Congrats, its Ladder: You advance by " + dice);
+                        position = position + dice;
+                        Console.WriteLine("Your Current Position is " + position);
+                        break;
+                    case 3:
+                        Console.WriteLine("Opps!,its a Snake: You retreat by " + dice);
+                        position = position - dice;
+                        Console.WriteLine("Your Current Position is " + position);
+                        if (position < 0)
+                        {
+                            position = startPosition;
+                            Console.WriteLine("You start again from 0");
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                }
+            }
+            Console.WriteLine(position);
 
         }
     }
