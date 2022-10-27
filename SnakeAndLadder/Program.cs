@@ -18,7 +18,7 @@
                     TwoPlayers.TwoPlayerGame();
                     break ;
                 default:
-                     Console.WriteLine("Invalid Choice");
+                     Console.WriteLine("Invalid Choice.");
                     break;
             }
         }

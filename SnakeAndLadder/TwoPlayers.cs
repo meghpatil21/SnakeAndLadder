@@ -16,6 +16,7 @@ namespace SnakeAndLadder
             int diceCount = 0;
             int dummy = 0;
             int position2 = 0;
+            int megh = 0;
 
             while (position < 100 && position2<100)
             {
@@ -148,7 +149,7 @@ namespace SnakeAndLadder
                 Console.WriteLine("Player 2 WIN & player 1 is at {0} position.", position);
             }
             //Console.WriteLine("Congrats, You win.");
-            //Console.WriteLine("The Dice was rolled {0} times.", diceCount);
+            Console.WriteLine("The Dice was rolled {0} times.", diceCount);
 
         }
     }
